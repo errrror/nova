@@ -1,0 +1,841 @@
+{
+  "generator": "wally-codewiki",
+  "language": "zh-CN",
+  "workspaceMode": "single-repo",
+  "generatedAt": "2026-11-24T00:00:00Z",
+  "commitHash": "ffcc707aa555e7dc76fa14b9353dbb3c8573fea1",
+  "branch": "chore/wally-init-20261124-c11",
+  "mode": "full",
+  "pageCount": 35,
+  "skippedHumanPages": [],
+  "driftWarnings": [],
+  "externalPages": {
+    "apis": [
+      "apis/index.md",
+      "apis/_template.md"
+    ],
+    "devops": [
+      "devops/env.md",
+      "devops/test-env-deploy.md"
+    ],
+    "integration_test": [
+      "integration_test/integration_test.md"
+    ],
+    "sqls": [
+      "sqls/README.md"
+    ],
+    "unittest": [
+      "unittest/unittest.md"
+    ]
+  },
+  "externalPagesExclusionReason": "SOP 2.0 专用/现有权威文档，仅作链接引用，不套用 codewiki 模板、不计入 pageOrder/pageCount。",
+  "pageOrder": [
+    "INDEX.md",
+    "architecture/api-service.md",
+    "architecture/cli-and-cmd.md",
+    "architecture/compute-worker.md",
+    "architecture/conductor-engine.md",
+    "architecture/index.md",
+    "architecture/module-dep-matrix.md",
+    "architecture/scheduler-engine.md",
+    "architecture/virt-and-data.md",
+    "business/domain-models/index.md",
+    "business/index.md",
+    "business/wf-instance-actions.md",
+    "business/wf-instance-boot.md",
+    "business/wf-scheduling.md",
+    "contracts/api-reference.md",
+    "contracts/api/compute-v21.md",
+    "contracts/configuration.md",
+    "contracts/error-codes.md",
+    "integrations/downstream/cinder.md",
+    "integrations/downstream/glance.md",
+    "integrations/downstream/ironic.md",
+    "integrations/downstream/keystone.md",
+    "integrations/downstream/mysql.md",
+    "integrations/downstream/neutron.md",
+    "integrations/index.md",
+    "integrations/topology-and-mapping.md",
+    "operations/boundary.md",
+    "operations/deployment-and-runtime.md",
+    "operations/dev-and-test.md",
+    "operations/pitfalls-and-adr.md",
+    "operations/runbook-and-observability.md",
+    "overview/business-architecture.md",
+    "overview/callchain-panorama.md",
+    "overview/glossary.md",
+    "overview/system-architecture.md"
+  ],
+  "fileToDocs": {
+    ".testr.conf": [
+      "operations/dev-and-test.md"
+    ],
+    ".wally/config.json": [
+      "operations/boundary.md"
+    ],
+    "README.rst": [
+      "operations/boundary.md"
+    ],
+    "bindep.txt": [
+      "operations/deployment-and-runtime.md"
+    ],
+    "etc/nova/api-paste.ini": [
+      "operations/boundary.md",
+      "operations/deployment-and-runtime.md"
+    ],
+    "etc/nova/nova-config-generator.conf": [
+      "operations/deployment-and-runtime.md"
+    ],
+    "etc/nova/rootwrap.conf": [
+      "operations/deployment-and-runtime.md"
+    ],
+    "gate/post_test_hook.sh": [
+      "operations/deployment-and-runtime.md"
+    ],
+    "nova/__init__.py": [
+      "contracts/configuration.md"
+    ],
+    "nova/api/openstack/compute/aggregates.py": [
+      "contracts/api/compute-v21.md"
+    ],
+    "nova/api/openstack/compute/flavors.py": [
+      "contracts/api/compute-v21.md"
+    ],
+    "nova/api/openstack/compute/images.py": [
+      "contracts/api/compute-v21.md"
+    ],
+    "nova/api/openstack/compute/keypairs.py": [
+      "contracts/api/compute-v21.md"
+    ],
+    "nova/api/openstack/compute/routes.py": [
+      "architecture/api-service.md",
+      "architecture/index.md",
+      "business/index.md",
+      "business/wf-instance-actions.md",
+      "contracts/api-reference.md",
+      "contracts/api/compute-v21.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "nova/api/openstack/compute/servers.py": [
+      "architecture/api-service.md",
+      "architecture/module-dep-matrix.md",
+      "business/index.md",
+      "business/wf-instance-actions.md",
+      "business/wf-instance-boot.md",
+      "contracts/api-reference.md",
+      "contracts/api/compute-v21.md",
+      "contracts/error-codes.md",
+      "integrations/topology-and-mapping.md",
+      "overview/business-architecture.md",
+      "overview/callchain-panorama.md"
+    ],
+    "nova/api/openstack/compute/wsgi.py": [
+      "architecture/api-service.md"
+    ],
+    "nova/api/openstack/wsgi_app.py": [
+      "architecture/api-service.md",
+      "contracts/api-reference.md",
+      "overview/system-architecture.md"
+    ],
+    "nova/cells/manager.py": [
+      "operations/pitfalls-and-adr.md"
+    ],
+    "nova/cmd/api.py": [
+      "architecture/cli-and-cmd.md"
+    ],
+    "nova/cmd/compute.py": [
+      "architecture/cli-and-cmd.md",
+      "operations/pitfalls-and-adr.md",
+      "overview/system-architecture.md"
+    ],
+    "nova/cmd/conductor.py": [
+      "architecture/cli-and-cmd.md"
+    ],
+    "nova/cmd/dhcpbridge.py": [
+      "contracts/configuration.md"
+    ],
+    "nova/cmd/manage.py": [
+      "architecture/cli-and-cmd.md",
+      "architecture/index.md"
+    ],
+    "nova/cmd/policy_check.py": [
+      "contracts/configuration.md"
+    ],
+    "nova/cmd/scheduler.py": [
+      "architecture/cli-and-cmd.md"
+    ],
+    "nova/cmd/status.py": [
+      "architecture/cli-and-cmd.md",
+      "operations/runbook-and-observability.md"
+    ],
+    "nova/compute/api.py": [
+      "architecture/conductor-engine.md",
+      "architecture/module-dep-matrix.md",
+      "business/index.md",
+      "business/wf-instance-actions.md",
+      "business/wf-instance-boot.md",
+      "overview/business-architecture.md",
+      "overview/callchain-panorama.md"
+    ],
+    "nova/compute/manager.py": [
+      "architecture/compute-worker.md",
+      "architecture/index.md",
+      "architecture/module-dep-matrix.md",
+      "business/wf-instance-actions.md",
+      "business/wf-instance-boot.md",
+      "integrations/topology-and-mapping.md",
+      "operations/runbook-and-observability.md",
+      "overview/callchain-panorama.md"
+    ],
+    "nova/compute/resource_tracker.py": [
+      "architecture/compute-worker.md"
+    ],
+    "nova/compute/task_states.py": [
+      "architecture/compute-worker.md",
+      "business/domain-models/index.md",
+      "overview/glossary.md"
+    ],
+    "nova/compute/utils.py": [
+      "operations/runbook-and-observability.md"
+    ],
+    "nova/compute/vm_states.py": [
+      "architecture/compute-worker.md",
+      "business/domain-models/index.md",
+      "overview/business-architecture.md",
+      "overview/glossary.md"
+    ],
+    "nova/conductor/manager.py": [
+      "architecture/conductor-engine.md",
+      "architecture/index.md",
+      "architecture/module-dep-matrix.md",
+      "business/wf-instance-actions.md",
+      "business/wf-instance-boot.md",
+      "business/wf-scheduling.md",
+      "overview/callchain-panorama.md"
+    ],
+    "nova/conductor/rpcapi.py": [
+      "architecture/conductor-engine.md",
+      "architecture/module-dep-matrix.md",
+      "business/wf-instance-boot.md",
+      "operations/pitfalls-and-adr.md",
+      "overview/callchain-panorama.md"
+    ],
+    "nova/conf/base.py": [
+      "contracts/configuration.md"
+    ],
+    "nova/conf/cinder.py": [
+      "contracts/configuration.md",
+      "integrations/downstream/cinder.md"
+    ],
+    "nova/conf/compute.py": [
+      "contracts/configuration.md",
+      "operations/runbook-and-observability.md"
+    ],
+    "nova/conf/database.py": [
+      "integrations/downstream/mysql.md"
+    ],
+    "nova/conf/glance.py": [
+      "contracts/configuration.md",
+      "integrations/downstream/glance.md"
+    ],
+    "nova/conf/opts.py": [
+      "contracts/configuration.md"
+    ],
+    "nova/conf/scheduler.py": [
+      "contracts/configuration.md",
+      "operations/pitfalls-and-adr.md"
+    ],
+    "nova/conf/service_token.py": [
+      "integrations/downstream/keystone.md"
+    ],
+    "nova/config.py": [
+      "contracts/configuration.md",
+      "integrations/downstream/mysql.md",
+      "overview/system-architecture.md"
+    ],
+    "nova/db/sqlalchemy/api.py": [
+      "architecture/virt-and-data.md",
+      "integrations/downstream/mysql.md",
+      "integrations/index.md"
+    ],
+    "nova/db/sqlalchemy/models.py": [
+      "architecture/virt-and-data.md",
+      "business/domain-models/index.md",
+      "integrations/downstream/mysql.md"
+    ],
+    "nova/exception.py": [
+      "contracts/error-codes.md",
+      "integrations/downstream/cinder.md",
+      "integrations/downstream/glance.md",
+      "operations/runbook-and-observability.md"
+    ],
+    "nova/image/glance.py": [
+      "contracts/error-codes.md",
+      "integrations/downstream/glance.md",
+      "integrations/index.md",
+      "integrations/topology-and-mapping.md"
+    ],
+    "nova/manager.py": [
+      "overview/system-architecture.md"
+    ],
+    "nova/network/neutronv2/api.py": [
+      "integrations/downstream/neutron.md",
+      "integrations/index.md",
+      "integrations/topology-and-mapping.md"
+    ],
+    "nova/objects/base.py": [
+      "architecture/index.md",
+      "architecture/module-dep-matrix.md",
+      "architecture/virt-and-data.md",
+      "business/domain-models/index.md",
+      "overview/glossary.md"
+    ],
+    "nova/objects/flavor.py": [
+      "business/domain-models/index.md"
+    ],
+    "nova/objects/instance.py": [
+      "architecture/virt-and-data.md",
+      "business/domain-models/index.md",
+      "overview/glossary.md"
+    ],
+    "nova/policy.py": [
+      "architecture/api-service.md",
+      "contracts/api-reference.md",
+      "contracts/error-codes.md"
+    ],
+    "nova/quota.py": [
+      "business/index.md",
+      "business/wf-instance-boot.md"
+    ],
+    "nova/rpc.py": [
+      "architecture/module-dep-matrix.md",
+      "architecture/virt-and-data.md",
+      "integrations/index.md",
+      "operations/runbook-and-observability.md",
+      "overview/callchain-panorama.md",
+      "overview/system-architecture.md"
+    ],
+    "nova/scheduler/filter_scheduler.py": [
+      "architecture/index.md",
+      "architecture/scheduler-engine.md",
+      "business/wf-scheduling.md",
+      "overview/business-architecture.md"
+    ],
+    "nova/scheduler/host_manager.py": [
+      "architecture/scheduler-engine.md"
+    ],
+    "nova/scheduler/manager.py": [
+      "architecture/module-dep-matrix.md",
+      "architecture/scheduler-engine.md",
+      "business/index.md",
+      "business/wf-scheduling.md"
+    ],
+    "nova/scheduler/rpcapi.py": [
+      "architecture/scheduler-engine.md",
+      "business/wf-scheduling.md"
+    ],
+    "nova/service.py": [
+      "overview/system-architecture.md"
+    ],
+    "nova/service_auth.py": [
+      "integrations/downstream/keystone.md",
+      "integrations/index.md"
+    ],
+    "nova/tests/unit/conf_fixture.py": [
+      "operations/dev-and-test.md"
+    ],
+    "nova/virt/driver.py": [
+      "architecture/index.md",
+      "architecture/module-dep-matrix.md",
+      "architecture/virt-and-data.md",
+      "business/wf-instance-actions.md"
+    ],
+    "nova/virt/ironic/client_wrapper.py": [
+      "integrations/downstream/ironic.md",
+      "integrations/index.md"
+    ],
+    "nova/virt/ironic/driver.py": [
+      "integrations/downstream/ironic.md"
+    ],
+    "nova/virt/ironic/patcher.py": [
+      "integrations/downstream/ironic.md"
+    ],
+    "nova/virt/libvirt/driver.py": [
+      "architecture/virt-and-data.md",
+      "business/wf-instance-boot.md",
+      "overview/callchain-panorama.md"
+    ],
+    "nova/volume/cinder.py": [
+      "contracts/error-codes.md",
+      "integrations/downstream/cinder.md",
+      "integrations/index.md",
+      "integrations/topology-and-mapping.md"
+    ],
+    "setup.cfg": [
+      "architecture/api-service.md",
+      "architecture/cli-and-cmd.md",
+      "architecture/conductor-engine.md",
+      "architecture/index.md",
+      "architecture/scheduler-engine.md",
+      "architecture/virt-and-data.md",
+      "business/wf-scheduling.md",
+      "contracts/api-reference.md",
+      "operations/boundary.md",
+      "operations/deployment-and-runtime.md",
+      "operations/dev-and-test.md",
+      "overview/glossary.md",
+      "overview/system-architecture.md"
+    ],
+    "setup.py": [
+      "operations/deployment-and-runtime.md"
+    ],
+    "test-requirements.txt": [
+      "operations/dev-and-test.md"
+    ],
+    "tox.ini": [
+      "operations/boundary.md",
+      "operations/deployment-and-runtime.md",
+      "operations/dev-and-test.md"
+    ]
+  },
+  "repoDeps": [],
+  "moduleTree": [
+    {
+      "page": "architecture/api-service.md",
+      "sourcePaths": [
+        "setup.cfg",
+        "nova/api/openstack/wsgi_app.py",
+        "nova/api/openstack/compute/wsgi.py",
+        "nova/api/openstack/compute/routes.py",
+        "nova/api/openstack/compute/servers.py",
+        "nova/policy.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/cli-and-cmd.md",
+      "sourcePaths": [
+        "setup.cfg",
+        "nova/cmd/api.py",
+        "nova/cmd/compute.py",
+        "nova/cmd/scheduler.py",
+        "nova/cmd/conductor.py",
+        "nova/cmd/manage.py",
+        "nova/cmd/status.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/compute-worker.md",
+      "sourcePaths": [
+        "nova/compute/manager.py",
+        "nova/compute/resource_tracker.py",
+        "nova/compute/vm_states.py",
+        "nova/compute/task_states.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/conductor-engine.md",
+      "sourcePaths": [
+        "setup.cfg",
+        "nova/conductor/manager.py",
+        "nova/conductor/rpcapi.py",
+        "nova/compute/api.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/index.md",
+      "sourcePaths": [
+        "setup.cfg",
+        "nova/api/openstack/compute/routes.py",
+        "nova/conductor/manager.py",
+        "nova/scheduler/filter_scheduler.py",
+        "nova/compute/manager.py",
+        "nova/virt/driver.py",
+        "nova/objects/base.py",
+        "nova/cmd/manage.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/module-dep-matrix.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/servers.py",
+        "nova/compute/api.py",
+        "nova/conductor/manager.py",
+        "nova/conductor/rpcapi.py",
+        "nova/scheduler/manager.py",
+        "nova/compute/manager.py",
+        "nova/objects/base.py",
+        "nova/virt/driver.py",
+        "nova/rpc.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/scheduler-engine.md",
+      "sourcePaths": [
+        "setup.cfg",
+        "nova/scheduler/manager.py",
+        "nova/scheduler/filter_scheduler.py",
+        "nova/scheduler/host_manager.py",
+        "nova/scheduler/rpcapi.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "architecture/virt-and-data.md",
+      "sourcePaths": [
+        "nova/virt/driver.py",
+        "nova/virt/libvirt/driver.py",
+        "setup.cfg",
+        "nova/objects/base.py",
+        "nova/objects/instance.py",
+        "nova/db/sqlalchemy/api.py",
+        "nova/db/sqlalchemy/models.py",
+        "nova/rpc.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/domain-models/index.md",
+      "sourcePaths": [
+        "nova/objects/instance.py",
+        "nova/objects/flavor.py",
+        "nova/objects/base.py",
+        "nova/db/sqlalchemy/models.py",
+        "nova/compute/vm_states.py",
+        "nova/compute/task_states.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/index.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/routes.py",
+        "nova/api/openstack/compute/servers.py",
+        "nova/compute/api.py",
+        "nova/scheduler/manager.py",
+        "nova/quota.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/wf-instance-actions.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/routes.py",
+        "nova/api/openstack/compute/servers.py",
+        "nova/compute/api.py",
+        "nova/conductor/manager.py",
+        "nova/compute/manager.py",
+        "nova/virt/driver.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/wf-instance-boot.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/servers.py",
+        "nova/compute/api.py",
+        "nova/conductor/rpcapi.py",
+        "nova/conductor/manager.py",
+        "nova/compute/manager.py",
+        "nova/virt/libvirt/driver.py",
+        "nova/quota.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "business/wf-scheduling.md",
+      "sourcePaths": [
+        "nova/scheduler/manager.py",
+        "nova/scheduler/filter_scheduler.py",
+        "nova/scheduler/rpcapi.py",
+        "nova/conductor/manager.py",
+        "setup.cfg"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "contracts/api-reference.md",
+      "sourcePaths": [
+        "setup.cfg",
+        "nova/api/openstack/compute/routes.py",
+        "nova/api/openstack/compute/servers.py",
+        "nova/policy.py",
+        "nova/api/openstack/wsgi_app.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "contracts/api/compute-v21.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/routes.py",
+        "nova/api/openstack/compute/servers.py",
+        "nova/api/openstack/compute/flavors.py",
+        "nova/api/openstack/compute/images.py",
+        "nova/api/openstack/compute/keypairs.py",
+        "nova/api/openstack/compute/aggregates.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "contracts/configuration.md",
+      "sourcePaths": [
+        "nova/config.py",
+        "nova/conf/opts.py",
+        "nova/conf/compute.py",
+        "nova/conf/glance.py",
+        "nova/conf/cinder.py",
+        "nova/conf/scheduler.py",
+        "nova/conf/base.py",
+        "nova/__init__.py",
+        "nova/cmd/dhcpbridge.py",
+        "nova/cmd/policy_check.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "contracts/error-codes.md",
+      "sourcePaths": [
+        "nova/exception.py",
+        "nova/api/openstack/compute/servers.py",
+        "nova/volume/cinder.py",
+        "nova/image/glance.py",
+        "nova/policy.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/cinder.md",
+      "sourcePaths": [
+        "nova/volume/cinder.py",
+        "nova/conf/cinder.py",
+        "nova/exception.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/glance.md",
+      "sourcePaths": [
+        "nova/image/glance.py",
+        "nova/conf/glance.py",
+        "nova/exception.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/ironic.md",
+      "sourcePaths": [
+        "nova/virt/ironic/client_wrapper.py",
+        "nova/virt/ironic/driver.py",
+        "nova/virt/ironic/patcher.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/keystone.md",
+      "sourcePaths": [
+        "nova/service_auth.py",
+        "nova/conf/service_token.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/mysql.md",
+      "sourcePaths": [
+        "nova/config.py",
+        "nova/db/sqlalchemy/api.py",
+        "nova/db/sqlalchemy/models.py",
+        "nova/conf/database.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/downstream/neutron.md",
+      "sourcePaths": [
+        "nova/network/neutronv2/api.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/index.md",
+      "sourcePaths": [
+        "nova/image/glance.py",
+        "nova/volume/cinder.py",
+        "nova/network/neutronv2/api.py",
+        "nova/virt/ironic/client_wrapper.py",
+        "nova/service_auth.py",
+        "nova/rpc.py",
+        "nova/db/sqlalchemy/api.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "integrations/topology-and-mapping.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/servers.py",
+        "nova/compute/manager.py",
+        "nova/image/glance.py",
+        "nova/volume/cinder.py",
+        "nova/network/neutronv2/api.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/boundary.md",
+      "sourcePaths": [
+        "README.rst",
+        "setup.cfg",
+        "tox.ini",
+        "etc/nova/api-paste.ini",
+        ".wally/config.json"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/deployment-and-runtime.md",
+      "sourcePaths": [
+        "setup.py",
+        "setup.cfg",
+        "tox.ini",
+        "etc/nova/api-paste.ini",
+        "etc/nova/nova-config-generator.conf",
+        "etc/nova/rootwrap.conf",
+        "bindep.txt",
+        "gate/post_test_hook.sh"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/dev-and-test.md",
+      "sourcePaths": [
+        "tox.ini",
+        ".testr.conf",
+        "setup.cfg",
+        "nova/tests/unit/conf_fixture.py",
+        "test-requirements.txt"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/pitfalls-and-adr.md",
+      "sourcePaths": [
+        "nova/cmd/compute.py",
+        "nova/conductor/rpcapi.py",
+        "nova/conf/scheduler.py",
+        "nova/api/openstack/compute/routes.py",
+        "nova/cells/manager.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "operations/runbook-and-observability.md",
+      "sourcePaths": [
+        "nova/compute/utils.py",
+        "nova/compute/manager.py",
+        "nova/rpc.py",
+        "nova/cmd/status.py",
+        "nova/conf/compute.py",
+        "nova/exception.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "overview/business-architecture.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/servers.py",
+        "nova/compute/api.py",
+        "nova/scheduler/filter_scheduler.py",
+        "nova/compute/vm_states.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "overview/callchain-panorama.md",
+      "sourcePaths": [
+        "nova/api/openstack/compute/servers.py",
+        "nova/compute/api.py",
+        "nova/conductor/rpcapi.py",
+        "nova/conductor/manager.py",
+        "nova/compute/manager.py",
+        "nova/virt/libvirt/driver.py",
+        "nova/rpc.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "overview/glossary.md",
+      "sourcePaths": [
+        "nova/compute/vm_states.py",
+        "nova/compute/task_states.py",
+        "nova/objects/instance.py",
+        "nova/objects/base.py",
+        "setup.cfg"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    },
+    {
+      "page": "overview/system-architecture.md",
+      "sourcePaths": [
+        "setup.cfg",
+        "nova/config.py",
+        "nova/service.py",
+        "nova/cmd/compute.py",
+        "nova/rpc.py",
+        "nova/manager.py",
+        "nova/api/openstack/wsgi_app.py"
+      ],
+      "dependsOn": [],
+      "usedBy": []
+    }
+  ],
+  "verification": {
+    "passed": true,
+    "unresolvedRefs": 0,
+    "truncatedPages": 0,
+    "duplicatePairs": 0,
+    "gates": {
+      "G1_header_human_and_meta": "PASS",
+      "G2_coverage_and_contracts": "PASS",
+      "G3_closure_and_anchoring": "PASS",
+      "G4_depth_dedup_and_lang": "PASS",
+      "G5_mermaid_safety": "PASS"
+    }
+  }
+}
