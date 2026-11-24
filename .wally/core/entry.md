@@ -1,0 +1,12 @@
+# SOP task routing
+
+First read `.wally/core/scope.md` to classify the current request. Handle consultation, read-only analysis, unrelated conversation and lightweight documentation directly; an existing or missing branch task does not activate SOP. Use the routing below only for development requests or explicit requests to start/resume SOP.
+
+From the repository root, use `python3 .wally/scripts/sop_context.py` to match the actual branch against `.wally/plans/*/00-overview.md`. Reuse known branch and task status instead of listing directories or rechecking the branch and overviews.
+
+- Unversioned historical task: read `.wally/compat/v1/CODEBUDDY.md`, or the snapshotted AGENTS.md/CLAUDE.md. Resolve old review/commit/docs/template/Clarify references against this snapshot while executing tools in the actual repository. Never mix current rules into an old contract. A missing snapshot blocks recovery; do not migrate implicitly.
+- Versioned task: read workflow.md under the task's bound SOP Rules path, then `.wally/profiles/project.md`, `.wally/rules/` (legacy tasks with their own `profile.md` / `_rules/` remain readable), and the current phase. Load gates.md, interaction.md, and relevant project extensions from the same version. Missing bound files are errors, not permission to fall back to the latest version.
+- No task and no branch choice: check `.wally/install-state.json` for the installed version if needed. Report the actual branch and that task creation is pending. Ask whether to create a task branch, then end the turn. Offer to stay only if the current branch is eligible for development. Before asking, read only project constraints needed to determine eligible choices. Defer the project profile, task script, phase files, templates, historical versions, and implementation details until the branch is chosen.
+- Branch already chosen: create and switch, or stay on the explicitly selected eligible branch if it is not main/master/HEAD. Read `.wally/profiles/project.md` and run `python3 .wally/scripts/create_task.py YYYY-MM-DD_title --branch <chosen-branch>`. The script does not switch branches, run tests, or commit. A branch choice already made in the request is sufficient.
+
+Existing repository instructions and user authorization remain in force. Replaced legacy SOP sections remain available to historical tasks through compat/v1. Resolve substantive conflicts with custom project workflows explicitly.

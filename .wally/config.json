@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "deploy": {
+    "command": "",
+    "guide": ".wally/docs/devops/test-env-deploy.md",
+    "verify": "",
+    "rollback": "",
+    "readiness": "pending",
+    "gaps": [
+      "仓库内无测试环境部署入口：README 指向外部 docs.openstack.org，部署依赖外部 devstack；gate/ 仅为 OpenStack infra CI hook",
+      "未指定目标测试环境标识/负责人/授权边界",
+      "未提供凭证获取方式（无 in-repo openrc/凭证样例）",
+      "未定义 verify、rollback 命令/触发条件与部署验收判据"
+    ]
+  },
+  "it": {
+    "command": "tox -e functional",
+    "guide": ".wally/docs/integration_test/integration_test.md",
+    "success_criteria": "",
+    "readiness": "pending",
+    "gaps": [
+      "tox -e functional 为仓库内 functional 测试（OS_TEST_PATH=./nova/tests/functional），非针对已部署环境的端到端 Tempest IT",
+      "devstack/tempest-dsvm-*-rc 仅为外部 OpenStack CI job 的测试选择脚本，仓库内无 tempest run 入口；setup.cfg 未注册 tempest 插件",
+      "未提供集成测试目标环境、认证/配置获取方式与数据准备/隔离方案",
+      "未定义验收判据（通过标准、失败分类、清理与证据位置）"
+    ]
+  }
+}

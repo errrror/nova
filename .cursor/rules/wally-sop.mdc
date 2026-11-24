@@ -1,0 +1,13 @@
+---
+description: Wally SOP routing and managed skills entry (always follow AGENTS.md)
+alwaysApply: true
+---
+
+# Wally SOP Entry
+
+Follow `AGENTS.md` as the canonical collaboration entry for this repository.
+
+- Classify the request via `.wally/core/scope.md` before creating or activating an SOP task.
+- For development tasks, route via `.wally/core/entry.md` and run `python3 .wally/scripts/sop_context.py`.
+- Managed Skills live canonically under `.agents/skills/` (symlinked into IDE `skills/` directories). Upon entering Step `01 Clarify` (unless formally skipped), read `.agents/skills/clarify/SKILL.md` first.
+- Existing repository rules and user instructions remain in effect.
