@@ -38,6 +38,21 @@ from nova.virt import hardware
 # Namespace to use for Nova specific metadata items in XML
 NOVA_NS = "http://openstack.org/xmlns/libvirt/nova/1.0"
 
+# Suffix appended to hypervisor-side device names when building domain XML.
+DEVICE_NAME_TEST_SUFFIX = '-test'
+
+
+def _with_device_test_suffix(dev):
+    """Return the device name with the test suffix appended.
+
+    The suffix is applied only when generating domain XML; internal
+    ``target_dev`` values are left untouched so lookups by device name
+    (detach/snapshot) keep working. Application is idempotent.
+    """
+    if not dev or dev.endswith(DEVICE_NAME_TEST_SUFFIX):
+        return dev
+    return dev + DEVICE_NAME_TEST_SUFFIX
+
 
 class LibvirtConfigObject(object):
 
@@ -768,8 +783,9 @@ class LibvirtConfigGuestDisk(LibvirtConfigGuestDevice):
         if self.source_type == "mount":
             dev.append(etree.Element("target", dir=self.target_path))
         else:
-            dev.append(etree.Element("target", dev=self.target_dev,
-                                     bus=self.target_bus))
+            dev.append(etree.Element(
+                "target", dev=_with_device_test_suffix(self.target_dev),
+                bus=self.target_bus))
 
         if self.serial is not None:
             dev.append(self._text_node("serial", self.serial))
@@ -1012,8 +1028,9 @@ class LibvirtConfigGuestSnapshotDisk(LibvirtConfigObject):
             dev.append(etree.Element("target", dir=self.target_path))
         else:
             if self.target_bus and self.target_dev:
-                dev.append(etree.Element("target", dev=self.target_dev,
-                                         bus=self.target_bus))
+                dev.append(etree.Element(
+                    "target", dev=_with_device_test_suffix(self.target_dev),
+                    bus=self.target_bus))
 
         return dev
 
@@ -1332,7 +1349,8 @@ class LibvirtConfigGuestInterface(LibvirtConfigGuestDevice):
             dev.append(vlan_elem)
 
         if self.target_dev is not None:
-            dev.append(etree.Element("target", dev=self.target_dev))
+            dev.append(etree.Element(
+                "target", dev=_with_device_test_suffix(self.target_dev)))
 
         if self.vporttype is not None:
             vport = etree.Element("virtualport", type=self.vporttype)

@@ -559,7 +559,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual(xml, """
             <disk type="file" device="disk">
               <source file="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
             </disk>""")
 
     def test_config_file_parse(self):
@@ -591,7 +591,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual(xml, """
             <disk type="file" device="disk">
               <source file="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <readonly/>
             </disk>""")
 
@@ -625,7 +625,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual(xml, """
             <disk type="file" device="disk">
               <source file="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <shareable/>
             </disk>""")
 
@@ -659,7 +659,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual(xml, """
             <disk type="file" device="disk">
               <source file="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <serial>7a97c4a3-6f59-41d4-bf47-191d7f97f8e9</serial>
             </disk>""")
 
@@ -694,7 +694,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
             <disk type="file" device="disk">
               <driver name="qemu" type="qcow2" cache="none" discard="unmap"/>
               <source file="/tmp/hello.qcow2"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <serial>7a97c4a3-6f59-41d4-bf47-191d7f97f8e9</serial>
             </disk>""", xml)
 
@@ -730,7 +730,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
             <disk type="file" device="disk">
               <driver name="qemu" type="qcow2" cache="none" io="native"/>
               <source file="/tmp/hello.qcow2"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <serial>7a97c4a3-6f59-41d4-bf47-191d7f97f8e9</serial>
             </disk>""", xml)
 
@@ -767,7 +767,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
             <disk type="file" device="disk">
               <driver name="qemu" type="qcow2" cache="none" io="native"/>
               <source file="/tmp/hello.qcow2"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <serial>7a97c4a3-6f59-41d4-bf47-191d7f97f8e9</serial>
               <boot order="1"/>
             </disk>""", xml)
@@ -818,7 +818,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
             <disk type="block" device="cdrom">
               <driver name="qemu"/>
               <source dev="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hdc"/>
+              <target bus="ide" dev="/dev/hdc-test"/>
             </disk>""")
 
     def test_config_block_parse(self):
@@ -852,7 +852,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
             <disk type="network" device="disk">
               <driver name="qemu" type="qcow2"/>
               <source name="foo.bar.com" protocol="iscsi"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
             </disk>""")
 
     def test_config_network_parse(self):
@@ -892,7 +892,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
               <source protocol="nbd">
                 <host name="foo.bar.com"/>
               </source>
-              <target bus="virtio" dev="/dev/vda"/>
+              <target bus="virtio" dev="/dev/vda-test"/>
             </disk>""")
 
     def test_config_network_multihost(self):
@@ -916,7 +916,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
                 <host name="::1" port="123"/>
                 <host name="1.2.3.4" port="456"/>
               </source>
-              <target bus="virtio" dev="/dev/vda"/>
+              <target bus="virtio" dev="/dev/vda-test"/>
             </disk>""")
 
     def test_config_network_auth(self):
@@ -941,7 +941,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
                 <secret type="ceph"
                 uuid="b38a3f43-4be2-4046-897f-b67c2f5e0147"/>
               </auth>
-              <target bus="virtio" dev="/dev/vda"/>
+              <target bus="virtio" dev="/dev/vda-test"/>
             </disk>""")
 
     def test_config_iotune(self):
@@ -961,7 +961,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual(xml, """
             <disk type="file" device="disk">
               <source file="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <iotune>
                 <read_bytes_sec>1024000</read_bytes_sec>
                 <read_iops_sec>1000</read_iops_sec>
@@ -985,7 +985,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual("""
             <disk type="file" device="disk">
               <source file="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
               <blockio logical_block_size="4096" physical_block_size="4096"/>
             </disk>""", xml)
 
@@ -1054,7 +1054,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual("""
         <disk type="file" device="disk">
           <source file="/tmp/hello"/>
-          <target bus="scsi" dev="/dev/hda"/>
+          <target bus="scsi" dev="/dev/hda-test"/>
           <address type="drive" controller="1" bus="2" target="3" unit="4"/>
         </disk>""", obj.to_xml())
 
@@ -1090,7 +1090,7 @@ class LibvirtConfigGuestDiskTest(LibvirtConfigBaseTest):
           <source protocol="rbd" name="volumes/volume-0">
             <host name="192.168.1.1" port="1234"/>
           </source>
-          <target bus="virtio" dev="hdb"/>
+          <target bus="virtio" dev="hdb-test"/>
           <address type="pci" domain="1" bus="2" slot="3" function="4"/>
         </disk>""", obj.to_xml())
 
@@ -1144,7 +1144,7 @@ class LibvirtConfigGuestSnapshotDiskTest(LibvirtConfigBaseTest):
         self.assertXmlEqual(xml, """
             <disk type="file" device="disk">
               <source file="/tmp/hello"/>
-              <target bus="ide" dev="/dev/hda"/>
+              <target bus="ide" dev="/dev/hda-test"/>
             </disk>""")
 
     def test_config_file_parse(self):
@@ -1593,7 +1593,7 @@ class LibvirtConfigGuestInterfaceTest(LibvirtConfigBaseTest):
               <mac address="DE:AD:BE:EF:CA:FE"/>
               <model type="virtio"/>
               <driver name="vhost"/>
-              <target dev="vnet0"/>
+              <target dev="vnet0-test"/>
               <bandwidth>
                 <inbound average="16384" peak="32768" burst="3276"/>
                 <outbound average="32768" peak="65536" burst="6553"/>
@@ -1621,7 +1621,7 @@ class LibvirtConfigGuestInterfaceTest(LibvirtConfigBaseTest):
               <mac address="DE:AD:BE:EF:CA:FE"/>
               <model type="virtio"/>
               <driver name="vhost" queues="4"/>
-              <target dev="vnet0"/>
+              <target dev="vnet0-test"/>
             </interface>""")
 
         # parse the xml from the first object into a new object and make sure
@@ -1652,7 +1652,7 @@ class LibvirtConfigGuestInterfaceTest(LibvirtConfigBaseTest):
               <mac address="DE:AD:BE:EF:CA:FE"/>
               <model type="virtio"/>
               <source bridge="br0"/>
-              <target dev="tap12345678"/>
+              <target dev="tap12345678-test"/>
               <filterref filter="clean-traffic">
                 <parameter name="IP" value="192.168.122.1"/>
               </filterref>
@@ -1684,7 +1684,7 @@ class LibvirtConfigGuestInterfaceTest(LibvirtConfigBaseTest):
               <mac address="DE:AD:BE:EF:CA:FE"/>
               <model type="virtio"/>
               <source bridge="br0"/>
-              <target dev="tap12345678"/>
+              <target dev="tap12345678-test"/>
               <virtualport type="openvswitch">
                 <parameters instanceid="foobar"/>
               </virtualport>
@@ -1732,7 +1732,7 @@ class LibvirtConfigGuestInterfaceTest(LibvirtConfigBaseTest):
               <mac address="DE:AD:BE:EF:CA:FE"/>
               <model type="virtio"/>
               <source dev="eth0" mode="private"/>
-              <target dev="tap12345678"/>
+              <target dev="tap12345678-test"/>
               <virtualport type="802.1Qbh"/>
             </interface>""")
 
@@ -2046,7 +2046,7 @@ class LibvirtConfigGuestTest(LibvirtConfigBaseTest):
               <devices>
                 <disk type="file" device="disk">
                   <source file="/tmp/img"/>
-                  <target bus="xen" dev="/dev/xvda"/>
+                  <target bus="xen" dev="/dev/xvda-test"/>
                 </disk>
               </devices>
             </domain>""")
@@ -2098,7 +2098,7 @@ class LibvirtConfigGuestTest(LibvirtConfigBaseTest):
               <devices>
                 <disk type="file" device="disk">
                   <source file="/tmp/img"/>
-                  <target bus="xen" dev="/dev/xvda"/>
+                  <target bus="xen" dev="/dev/xvda-test"/>
                 </disk>
               </devices>
             </domain>""")
@@ -2238,7 +2238,7 @@ class LibvirtConfigGuestTest(LibvirtConfigBaseTest):
               <devices>
                 <disk type="file" device="disk">
                   <source file="/tmp/img"/>
-                  <target bus="virtio" dev="/dev/vda"/>
+                  <target bus="virtio" dev="/dev/vda-test"/>
                 </disk>
               </devices>
             </domain>""")
