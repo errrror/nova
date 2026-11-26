@@ -51,6 +51,7 @@ from nova.api.openstack.compute import floating_ip_pools
 from nova.api.openstack.compute import floating_ips
 from nova.api.openstack.compute import floating_ips_bulk
 from nova.api.openstack.compute import fping
+from nova.api.openstack.compute import hello
 from nova.api.openstack.compute import hide_server_addresses
 from nova.api.openstack.compute import hosts
 from nova.api.openstack.compute import hypervisors
@@ -156,6 +157,10 @@ extensions_controller = functools.partial(
 
 fixed_ips_controller = functools.partial(_create_controller,
     fixed_ips.FixedIPController, [], [])
+
+
+hello_controller = functools.partial(
+    _create_controller, hello.HelloController, [], [])
 
 
 flavor_controller = functools.partial(_create_controller,
@@ -465,6 +470,9 @@ ROUTE_LIST = (
         'GET': [image_metadata_controller, 'show'],
         'PUT': [image_metadata_controller, 'update'],
         'DELETE': [image_metadata_controller, 'delete']
+    }),
+    ('/hello', {
+        'GET': [hello_controller, 'index']
     }),
     ('/limits', {
         'GET': [limits_controller, 'index']
