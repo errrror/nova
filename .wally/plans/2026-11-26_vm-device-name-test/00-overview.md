@@ -71,6 +71,7 @@
 
 ## 提交结果
 
-- 提交准备：待完成
-- Commit：未执行
-- Push：未执行
+- 提交准备：完成
+- Commit：已执行，commit `db473d6020b55710bb12507e21fb27dcad894d3b`（Message: Add -test suffix to hypervisor device names in domain XML）
+- Push：已执行，`feat/vm-device-name-test` → origin（含 2 个业务文件 + 13 个 SOP 产物）
+- MR/PR：已创建，GitHub PR #3 → https://github.com/errrror/nova/pull/3 （base: master，state: open）

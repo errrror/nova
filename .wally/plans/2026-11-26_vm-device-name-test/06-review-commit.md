@@ -41,9 +41,9 @@
 
 ## 执行结果
 
-- Commit：未执行（待授权）。
-- Push：未执行（待授权）。
-- MR/PR：未创建（待授权）。
+- Commit：已执行，commit `db473d6020b55710bb12507e21fb27dcad894d3b`。
+- Push：已执行，`feat/vm-device-name-test` 已推送至 origin 并设 upstream。
+- MR/PR：已创建，GitHub PR #3（base: master，state: open），完整链接：https://github.com/errrror/nova/pull/3 。
 
 ## 知识库证据
 
