@@ -92,6 +92,7 @@ from nova.api.openstack.compute import tenant_networks
 from nova.api.openstack.compute import used_limits
 from nova.api.openstack.compute import versionsV21
 from nova.api.openstack.compute import virtual_interfaces
+from nova.api.openstack.compute import welcome
 from nova.api.openstack.compute import volumes
 from nova.api.openstack import wsgi
 import nova.conf
@@ -387,6 +388,9 @@ virtual_interfaces_controller = functools.partial(_create_controller,
 volumes_controller = functools.partial(_create_controller,
     volumes.VolumeController, [], [])
 
+welcome_controller = functools.partial(_create_controller,
+    welcome.WelcomeController, [], [])
+
 
 # NOTE(alex_xu): This is structure of this route list as below:
 # (
@@ -419,6 +423,9 @@ ROUTE_LIST = (
     }),
     ('/extensions/{id}', {
         'GET': [extensions_controller, 'show'],
+    }),
+    ('/welcome', {
+        'GET': [welcome_controller, 'index'],
     }),
     ('/flavors', {
         'GET': [flavor_controller, 'index'],
