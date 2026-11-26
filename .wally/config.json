@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "deploy": {
+    "command": "",
+    "guide": "",
+    "verify": "",
+    "rollback": ""
+  },
+  "it": {
+    "command": "",
+    "guide": "",
+    "success_criteria": ""
+  }
+}
