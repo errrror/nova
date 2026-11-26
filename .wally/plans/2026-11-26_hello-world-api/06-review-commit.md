@@ -27,7 +27,9 @@
 
 ## 执行结果
 
-Commit：未执行（等待授权）。Push：未执行。MR：未创建。
+- Commit：已执行，commit message `feat: add GET /hello endpoint to nova compute API`。
+- Push：已执行，分支 `feature/hello-world-api` 已推送至 `origin`。
+- MR：已创建，PR #7：https://github.com/errrror/nova/pull/7
 
 ## 知识库证据
 

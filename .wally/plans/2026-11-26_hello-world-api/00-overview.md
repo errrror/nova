@@ -12,7 +12,7 @@
 | 流程 | 6 步 |
 | 摘要 | 新增 GET /hello 接口，返回 {"message": "Hello, World!"} JSON，无鉴权 |
 | 任务类型 | 功能新增 |
-| 状态 | Review 通过，待提交授权 |
+| 状态 | 已提交，PR #7 已创建 |
 | 创建日期 | 2026-11-26 |
 | 负责人 | 用户 |
 | Issue | 无 |
@@ -68,6 +68,6 @@
 ## 提交结果
 
 - 提交准备：已完成
-- Commit：未执行（等待用户授权）
-- Push：未执行（等待用户授权）
-- MR：未创建
+- Commit：已执行（`feat: add GET /hello endpoint to nova compute API`）
+- Push：已执行（`feature/hello-world-api` → `origin/feature/hello-world-api`）
+- MR：已创建，PR #7：https://github.com/errrror/nova/pull/7
