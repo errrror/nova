@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "ut": {
+    "command": "",
+    "guide": "",
+    "coverage_target": ""
+  },
+  "deploy": {
+    "command": "",
+    "guide": "",
+    "verify": "",
+    "rollback": ""
+  },
+  "it": {
+    "command": "",
+    "guide": "",
+    "success_criteria": ""
+  }
+}
