@@ -1,0 +1,38 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CODEBUDDY_PROJECT_DIR/.codebuddy/hooks/stop_token_collect.py\"",
+            "timeout": 3,
+            "marker": "# wally_sop:stop"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "command": "wally_repo_root=\"$(python3 -c 'from pathlib import Path; p=Path.cwd().resolve(); cands=list(dict.fromkeys([p, *p.parents, *sorted(c for c in p.iterdir() if c.is_dir())])); print(next(str(d) for d in cands if (d/\".wally/scripts/sop_context.py\").is_file()))')\" || exit 0; python3 \"$wally_repo_root/.wally/scripts/sop_context.py\" --repo \"$wally_repo_root\" --hook --client codebuddy --event UserPromptSubmit # wally:sop_context:UserPromptSubmit",
+            "timeout": 5,
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "wally_repo_root=\"$(python3 -c 'from pathlib import Path; p=Path.cwd().resolve(); cands=list(dict.fromkeys([p, *p.parents, *sorted(c for c in p.iterdir() if c.is_dir())])); print(next(str(d) for d in cands if (d/\".wally/scripts/sop_context.py\").is_file()))')\" || exit 0; python3 \"$wally_repo_root/.wally/scripts/sop_context.py\" --repo \"$wally_repo_root\" --hook --client codebuddy --event PreToolUse # wally:sop_context:PreToolUse",
+            "timeout": 5,
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -50,3 +50,11 @@ doc/source/_static/nova.policy.yaml.sample
 
  # Files created by releasenotes build
 releasenotes/build
+# wally-init: share project knowledge and SOP rules
+!/.wally/
+/.wally/local/
+/.wally/plans/**/token.json
+/.wally/plans/**/token.json.tmp.*
+/.wally/**/*.bk.*
+/.gitignore.bk.*
+*.bk.[0-9]*
