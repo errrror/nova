@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "deploy": {
+    "command": "",
+    "guide": ".wally/docs/devops/test-env-deploy.md",
+    "verify": "With admin credentials sourced (. admin-openrc): openstack compute service list; openstack catalog list; openstack image list; nova-status upgrade check. Source: doc/source/install/verify.rst.",
+    "rollback": "",
+    "readiness": "pending",
+    "gaps": [
+      "No project-owned test deployment entry command: this repository provides only OS service entry points (setup.cfg console_scripts such as nova-api, nova-compute, nova-scheduler, nova-conductor, nova-manage) and generic package-based install steps under doc/source/install/; there is no in-repo deploy script, Makefile, Dockerfile or Compose file.",
+      "No target test environment is defined: no environment identifier, host inventory, or DevStack local.conf for a customer test cloud exists in the repository.",
+      "No credential acquisition method for a test environment: no admin-openrc provisioning or credential source is provided for a customer test cloud.",
+      "No documented rollback procedure or rollback command: nova-manage (doc/source/cli/nova-manage.rst) exposes only schema sync/archive commands and no versioned deployment rollback."
+    ]
+  },
+  "it": {
+    "command": "",
+    "guide": ".wally/docs/integration_test/integration_test.md",
+    "success_criteria": "",
+    "readiness": "pending",
+    "gaps": [
+      "No in-repo integration-test runner command: the project's integration tests are the Tempest suite against a full live OpenStack deployment (doc/source/contributor/testing.rst) and Tempest lives outside this repository; devstack/tempest-dsvm-*-rc files are OpenStack CI job hooks only.",
+      "No target test environment is defined: no live Nova endpoint, target cloud, or Tempest configuration is present in the repository.",
+      "No credential acquisition method for the integration-test environment is documented.",
+      "No concrete, measurable success criteria: there are no in-repo gate thresholds or pass/fail definition for a Tempest run, only general testing strategy in doc/source/contributor/testing.rst."
+    ]
+  }
+}
