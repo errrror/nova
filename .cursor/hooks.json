@@ -1,0 +1,43 @@
+{
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "type": "command",
+        "command": "python3 \"$CURSOR_PROJECT_DIR/.cursor/hooks/cursor_token_collect.py\"",
+        "timeout": 3
+      },
+      {
+        "command": "wally_repo_root=\"$(python3 -c 'from pathlib import Path; p=Path.cwd().resolve(); cands=list(dict.fromkeys([p, *p.parents, *sorted(c for c in p.iterdir() if c.is_dir())])); print(next(str(d) for d in cands if (d/\".wally/scripts/sop_context.py\").is_file()))')\" || exit 0; python3 \"$wally_repo_root/.wally/scripts/sop_context.py\" --repo \"$wally_repo_root\" --hook --client cursor --event beforeSubmitPrompt # wally:sop_context:beforeSubmitPrompt",
+        "timeout": 5
+      }
+    ],
+    "afterAgentResponse": [
+      {
+        "type": "command",
+        "command": "python3 \"$CURSOR_PROJECT_DIR/.cursor/hooks/cursor_token_collect.py\"",
+        "timeout": 3
+      }
+    ],
+    "stop": [
+      {
+        "type": "command",
+        "command": "python3 \"$CURSOR_PROJECT_DIR/.cursor/hooks/cursor_token_collect.py\"",
+        "timeout": 3
+      }
+    ],
+    "sessionStart": [
+      {
+        "command": "wally_repo_root=\"$(python3 -c 'from pathlib import Path; p=Path.cwd().resolve(); cands=list(dict.fromkeys([p, *p.parents, *sorted(c for c in p.iterdir() if c.is_dir())])); print(next(str(d) for d in cands if (d/\".wally/scripts/sop_context.py\").is_file()))')\" || exit 0; python3 \"$wally_repo_root/.wally/scripts/sop_context.py\" --repo \"$wally_repo_root\" --hook --client cursor --event sessionStart # wally:sop_context:sessionStart",
+        "timeout": 5
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "wally_repo_root=\"$(python3 -c 'from pathlib import Path; p=Path.cwd().resolve(); cands=list(dict.fromkeys([p, *p.parents, *sorted(c for c in p.iterdir() if c.is_dir())])); print(next(str(d) for d in cands if (d/\".wally/scripts/sop_context.py\").is_file()))')\" || exit 0; python3 \"$wally_repo_root/.wally/scripts/sop_context.py\" --repo \"$wally_repo_root\" --hook --client cursor --event preToolUse # wally:sop_context:preToolUse",
+        "timeout": 5,
+        "failClosed": false
+      }
+    ]
+  },
+  "version": 1
+}

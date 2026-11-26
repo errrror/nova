@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "deploy": {
+    "command": "",
+    "guide": ".wally/docs/devops/test-env-deploy.md",
+    "verify": "From doc/source/install/verify.rst: source an admin-openrc, then run `openstack compute service list` (expected nova services enabled/up), `openstack catalog list`, `openstack image list`, and `nova-status upgrade check` (Cells v2, Placement API, Resource Providers all reported as Success).",
+    "rollback": "No project-defined rollback command or versioned rollback target found. gate/post_test_hook.sh only runs `nova-manage db archive_deleted_rows`, which is cleanup, not a version rollback. A rollback target and command must be supplied by the environment owner before execution.",
+    "readiness": "pending",
+    "gaps": [
+      "No deploy command or entrypoint: the repository has no Makefile, Dockerfile, docker-compose file, or Zuul/Jenkins deploy job (.github contains only copilot-instructions.md).",
+      "No target deployment/test environment identifier or owner is defined in the repository.",
+      "No credential acquisition method for a deploy/verify environment is documented; doc/source/install/verify.rst assumes an already existing admin-openrc.",
+      "No versioned rollback target or rollback command is defined."
+    ]
+  },
+  "it": {
+    "command": "tox -e functional",
+    "guide": ".wally/docs/integration_test/integration_test.md",
+    "success_criteria": "`tox -e functional` exits 0 with no failed tests and a non-empty, non-all-skipped result (os-testr/testr over OS_TEST_PATH=./nova/tests/functional, per tox.ini and .testr.conf). For Tempest integration runs, every case selected by devstack/tempest-dsvm-*-rc must pass; empty or all-skipped runs are not passes.",
+    "readiness": "pending",
+    "gaps": [
+      "No runnable integration target environment is defined in the repository; Tempest jobs rely on an external devstack/OpenStack deployment (devstack/tempest-dsvm-*-rc, gate/).",
+      "No credential acquisition method for Tempest/admin access is documented; tempest.conf and admin-openrc are produced outside this repository.",
+      "`tox -e functional` is a real local test entrypoint but is a functional suite, not end-to-end verification against a deployed cloud."
+    ]
+  }
+}
