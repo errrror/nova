@@ -27,7 +27,9 @@
 
 - 状态：Review 通过，用户已授权 Commit+Push+MR。
 - 待纳入 Git：`welcome.py`、`routes.py`、`test_welcome.py` 及 `.wally/plans/2026-11-26_welcome-api/` 全部产物。
-- Commit / Push / MR：用户已授权，执行中。
+- Commit / Push / MR：用户已授权，已执行完成。
+- 分支：`task/welcome-api`（已推送 origin）。
+- MR/PR 链接：https://github.com/errrror/nova/pull/5（GitHub Pull Request，state=open）。
 ## 时间记录说明
 
 - 01–03 已完成并记录精确时间；04/05 为任务创建时自动 SKIPPED（决策时间，0s，0 轮，非执行）。

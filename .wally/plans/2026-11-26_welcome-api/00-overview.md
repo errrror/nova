@@ -31,7 +31,7 @@
 
 ## 当前步骤
 
-- 步骤：已完成，待推送
+- 步骤：已完成（MR 已创建）
 - 文件：[06-review-commit.md](./06-review-commit.md)
 - 上次更新：2026-11-26 21:08:30
 
@@ -60,7 +60,7 @@
 
 ## 提交结果
 
-- 提交准备：准备完成，未提交
-- Commit：未执行（待用户授权）
-- Push：未执行（待用户授权）
-- MR：未创建（待用户授权）
+- 提交准备：已完成
+- Commit：已执行（本地提交完成）
+- Push：已执行（分支 task/welcome-api 已推送）
+- MR：已创建，链接：https://github.com/errrror/nova/pull/5
