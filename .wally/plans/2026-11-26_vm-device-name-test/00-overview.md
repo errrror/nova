@@ -12,7 +12,7 @@
 | 流程 | 6 步 |
 | 摘要 | 创建虚拟机时为 hypervisor 侧全部设备名（domain XML 的 `<target dev=...>`）追加 `-test` 后缀 |
 | 任务类型 | 功能新增 |
-| 状态 | 进行中 |
+| 状态 | 已完成 |
 | 创建日期 | 2026-11-26 |
 | 负责人 | wally |
 | Issue | 无 |
@@ -28,13 +28,13 @@
 - [x] 03. Implement + UT + Docs → [03-implement.md](./03-implement.md)
 - [x] 04. Deploy [SKIPPED: not configured] → [04-deploy.md](./04-deploy.md)
 - [x] 05. IT [SKIPPED: not configured] → [05-it.md](./05-it.md)
-- [ ] 06. Review + Commit → [06-review-commit.md](./06-review-commit.md)
+- [x] 06. Review + Commit → [06-review-commit.md](./06-review-commit.md)
 
 ## 当前步骤
 
-- 步骤：06. Review + Commit
+- 步骤：全部完成（01–06）
 - 文件：[06-review-commit.md](./06-review-commit.md)
-- 上次更新：2026-11-26 20:18:36
+- 上次更新：2026-11-26 20:50:06
 
 ## 时间记录
 
@@ -45,7 +45,7 @@
 | 03 | Implement + UT + Docs | 2026-11-26 20:11:11 | 2026-11-26 20:18:36 | 7m25s | 2 | TDD Red→Green；7 专项用例通过；真实 test_config.py 170 例 0 失败（22 基线 matcher 误判） |
 | 04 | Deploy | 2026-11-26 20:05:41+08:00 | 2026-11-26 20:05:41+08:00 | 0s | 0 | SKIPPED: not configured; decision time, not execution |
 | 05 | IT | 2026-11-26 20:05:41+08:00 | 2026-11-26 20:05:41+08:00 | 0s | 0 | SKIPPED: not configured; decision time, not execution |
-| 06 | Review + Commit | 2026-11-26 20:18:36 | 2026-11-26 20:19:49 | 1m13s | 1 | 独立 diff 审查通过；提交准备完成，Commit/Push 待用户授权 |
+| 06 | Review + Commit | 2026-11-26 20:18:36 | 2026-11-26 20:50:06 | 31m30s | 3 | 独立 diff 审查通过；Commit(db473d6 20:40:43)/Push/PR#3 已执行，补提交 0bcb431(20:41:12)记录 PR 链接；20:50:06 补齐收尾状态标记 |
 
 ## AI 交互 Token 报告（Commit 阶段生成）
 

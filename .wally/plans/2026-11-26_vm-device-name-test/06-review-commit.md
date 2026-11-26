@@ -19,13 +19,14 @@
 
 ## 时间记录审计
 
-- 01 Clarify 20:05:26→20:06:29（1m03s，2 轮）；02 Plan 20:06:29→20:11:02（4m33s，2 轮）；03 Implement 20:11:11→20:18:36（7m25s，2 轮）；04/05 SKIPPED 各 0s/0 轮（创建任务时决定时间）；06 Review 20:18:36→20:19:49（1m13s，1 轮）。
-- 六行齐全，时间精确到秒、顺序合理，Progress 与阶段产物对应；无空白/漏记/集中后补。时间来源：本任务对话中 `date` 命令真实输出。
+- 01 Clarify 20:05:26→20:06:29（1m03s，2 轮）；02 Plan 20:06:29→20:11:02（4m33s，2 轮）；03 Implement 20:11:11→20:18:36（7m25s，2 轮）；04/05 SKIPPED 各 0s/0 轮（创建任务时决定时间）；06 Review+Commit 20:18:36→20:50:06（31m30s，3 轮）。
+- 06 时间覆盖完整收尾动作：独立 diff 审查（20:19:49 结论）→ 用户授权 → Commit `db473d6`（20:40:43）→ Push → PR #3 创建 → 补提交 `0bcb431`（20:41:12，记录 PR 链接）→ 20:50:06 补齐收尾状态标记；时间来源为本任务对话 `date` 输出与 git commit 时间戳，未伪造。
+- 六行齐全，时间精确到秒、顺序合理，Progress 与阶段产物对应；无空白/漏记。
 
 ## 外部系统与资源
 
-- 无外部系统写入、无共享环境部署、无资源创建/删除。
-- Commit/Push 未执行（待用户授权）；无 MR/PR 创建，故无 MR/PR 链接。
+- 无共享环境部署、无资源创建/删除。
+- 外部系统写入：GitHub PR #3 已创建（state: open），链接 https://github.com/errrror/nova/pull/3 ；Commit/Push 经用户明确授权后执行，详见「执行结果」。
 
 ## 提交准备
 
@@ -37,7 +38,7 @@
     - `.wally/plans/2026-11-26_vm-device-name-test/` 全部产物（00-overview.md ~ 06-review-commit.md、cases/、execution.json、profile.md、sop-meta.json；不提交 token.json——未生成）
 - Token 报告：未启用 token collector（探测 `.codebuddy/scripts/token_report.py`、`.claude/scripts/token_report.py`、`.codex/scripts/token_report.py` 均不存在），如实记录“未启用”，不安装额外客户端、不手填报告；overview 的 `<!-- TOKEN_USAGE_START -->` 区块保留原说明。
 - Overview 更新与适用门禁结论：六阶段进度、时间记录、关键决策已更新；01-05 适用门禁通过，Deploy/IT 按配置 SKIPPED（保留 `[SKIPPED: ...]` 标记）；06 Review 通过。
-- Commit/Push 授权及停止边界：需用户明确授权后执行；未获授权前只完成准备，不提交、不推送、不创建 MR。
+- Commit/Push 授权及停止边界：用户已明确授权「Commit + Push + 创建 MR」，以下「执行结果」段为授权后实际结果；上列「（拟）」为授权前的准备记录，保留作为决策留痕。
 
 ## 执行结果
 
