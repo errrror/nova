@@ -1,0 +1,90 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wally_repo_root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" || exit 0; python3 \"$wally_repo_root/.codex/hooks/codex_token_collect.py\" --repo \"$wally_repo_root\" # wally:token_collect:UserPromptSubmit",
+            "timeout": 3
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "command": "wally_repo_root=\"$(python3 -c 'from pathlib import Path; p=Path.cwd().resolve(); cands=list(dict.fromkeys([p, *p.parents, *sorted(c for c in p.iterdir() if c.is_dir())])); print(next(str(d) for d in cands if (d/\".wally/scripts/sop_context.py\").is_file()))')\" || exit 0; python3 \"$wally_repo_root/.wally/scripts/sop_context.py\" --repo \"$wally_repo_root\" --hook --client codex --event UserPromptSubmit # wally:sop_context:UserPromptSubmit",
+            "timeout": 5,
+            "type": "command"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wally_repo_root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" || exit 0; python3 \"$wally_repo_root/.codex/hooks/codex_token_collect.py\" --repo \"$wally_repo_root\" # wally:token_collect:SubagentStart",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wally_repo_root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" || exit 0; python3 \"$wally_repo_root/.codex/hooks/codex_token_collect.py\" --repo \"$wally_repo_root\" # wally:token_collect:Stop",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wally_repo_root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" || exit 0; python3 \"$wally_repo_root/.codex/hooks/codex_token_collect.py\" --repo \"$wally_repo_root\" # wally:token_collect:SubagentStop",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Interrupt": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wally_repo_root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" || exit 0; python3 \"$wally_repo_root/.codex/hooks/codex_token_collect.py\" --repo \"$wally_repo_root\" # wally:token_collect:Interrupt",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "wally_repo_root=\"$(git rev-parse --show-toplevel 2>/dev/null)\" || exit 0; python3 \"$wally_repo_root/.codex/hooks/codex_token_collect.py\" --repo \"$wally_repo_root\" # wally:token_collect:SessionEnd",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "wally_repo_root=\"$(python3 -c 'from pathlib import Path; p=Path.cwd().resolve(); cands=list(dict.fromkeys([p, *p.parents, *sorted(c for c in p.iterdir() if c.is_dir())])); print(next(str(d) for d in cands if (d/\".wally/scripts/sop_context.py\").is_file()))')\" || exit 0; python3 \"$wally_repo_root/.wally/scripts/sop_context.py\" --repo \"$wally_repo_root\" --hook --client codex --event PreToolUse # wally:sop_context:PreToolUse",
+            "timeout": 5,
+            "type": "command"
+          }
+        ]
+      }
+    ]
+  }
+}
